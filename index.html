@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Todo List</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="main-table">
+            <div class="table">
+                <div id="box1">Todo List</div>
+                <br />
+                <div id="box2">
+                    <div>
+                        <input type="text" id="task-input" />
+                        <button id="add-task">+ new</button>
+                    </div>
+                    <ul class="task-list"></ul>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // todo list 추가
+            document.getElementById('add-task').addEventListener('click', () => {
+                const li = document.createElement('li');
+                li.innerHTML = document.getElementById('task-input').value;
+                document.querySelector('.task-list').appendChild(li);
+                document.getElementById('task-input').value = ''; // 입력 창 초기화
+            });
+        </script>
+    </body>
+</html>
