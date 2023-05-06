@@ -15,7 +15,7 @@
                 <div id="box2">
                     <div>
                         <input type="text" id="task-input" />
-                        <button id="add-task">+ new</button>
+                        <button id="add-task" onclick="addTask()">+ new</button>
                     </div>
                     <ul class="task-list"></ul>
                 </div>
@@ -23,13 +23,29 @@
         </div>
 
         <script>
-            // todo list 추가
-            document.getElementById('add-task').addEventListener('click', () => {
-                const li = document.createElement('li');
-                li.innerHTML = document.getElementById('task-input').value;
-                document.querySelector('.task-list').appendChild(li);
+
+            // todo list 추가 (기존 시도 : 동적으로 추가. -> 체크박스 선 긋기, 삭제 등 이벤트 추가할 때 id 지정 어려움)
+            let cnt = 0;
+            function addTask() {
+                cnt += 1;
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.className = 'checkbox';
+                checkbox.idName = `checkbox-list${cnt}`;
+                const label = document.createElement('label');
+                label.for = `checkbox-list${cnt}`;
+                label.idName = `checkbox-label${cnt}`;
+                label.innerText = document.getElementById('task-input').value;
+                const button = document.createElement('button');
+                button.innerText = 'x';
+                button.className = 'del-button';
+                const p = document.createElement('p');
+                document.querySelector('.task-list').append(checkbox, label, button, p);
                 document.getElementById('task-input').value = ''; // 입력 창 초기화
-            });
+            }
+
+
+        
         </script>
     </body>
 </html>

@@ -7,7 +7,7 @@ input {
     margin-left: 20px;
     height: 22px;
 }
-button {
+#add-task {
     background-color: #af7eea;
     color: white;
     border: none;
@@ -49,4 +49,28 @@ button {
 .main-table {
     display: flex;
     justify-content: center;
+}
+
+ul {
+    padding-left: 2px;
+}
+
+.checkbox {
+    display: inline-block;
+    width: 17px;
+}
+/* label {
+
+} */
+.del-button {
+    display: inline-block;
+    background-color: lightgray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-left: 7px;
 }
