@@ -40,6 +40,8 @@ document.getElementById('add-task').addEventListener('click', (e) => {
     // li 요소 생성
     const list = createElement({
         tagName: 'li',
+        //유니크한 id값 생성
+        id: Date.now(),
     });
 
     // 체크박스, 할일, 삭제버튼 하나의 li로 만들기
@@ -52,7 +54,6 @@ document.getElementById('add-task').addEventListener('click', (e) => {
         document.querySelector('ul').removeChild(list);
     });
 });
-
 
 const createElement = (data) => {
     const tag = document.createElement(data.tagName);
